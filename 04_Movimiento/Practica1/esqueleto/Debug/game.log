@@ -1,0 +1,12 @@
+﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  params.cpp
+  SeekSteering.cpp
+  Generating Code...
+  Compiling...
+  character.cpp
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  gameConfig.cpp
+  game.vcxproj -> C:\Users\Soker\Desktop\GuillermoSuarez_04_Movimiento\Practica1\esqueleto\bin\Win32\Debug\game.exe
+  ..\moai\3rdparty\glut-3.7.6-bin\glut32.dll
+  1 archivo(s) copiado(s)
