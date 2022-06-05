@@ -1,0 +1,17 @@
+﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  character.cpp
+C:\Users\Soker\Desktop\GuillermoSuarez_05_MovimientoAvanzado\Practica1\esqueleto\character.h(12,1): warning C4005: 'PI': macro redefinition
+C:\Users\Soker\Desktop\GuillermoSuarez_05_MovimientoAvanzado\Practica1\moai\src\uslscore\USMathConsts.h(8): message : see previous definition of 'PI'
+C:\Users\Soker\Desktop\GuillermoSuarez_05_MovimientoAvanzado\Practica1\esqueleto\character.cpp(16,37): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Soker\Desktop\GuillermoSuarez_05_MovimientoAvanzado\Practica1\esqueleto\character.cpp(16,30): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+C:\Users\Soker\Desktop\GuillermoSuarez_05_MovimientoAvanzado\Practica1\esqueleto\character.cpp(25,37): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Soker\Desktop\GuillermoSuarez_05_MovimientoAvanzado\Practica1\esqueleto\character.cpp(25,30): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+  PathFollowing.cpp
+C:\Users\Soker\Desktop\GuillermoSuarez_05_MovimientoAvanzado\Practica1\esqueleto\character.h(12,1): warning C4005: 'PI': macro redefinition
+C:\Users\Soker\Desktop\GuillermoSuarez_05_MovimientoAvanzado\Practica1\moai\src\uslscore\USMathConsts.h(8): message : see previous definition of 'PI'
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  ArriveSteering.cpp
+  game.vcxproj -> C:\Users\Soker\Desktop\GuillermoSuarez_05_MovimientoAvanzado\Practica1\esqueleto\bin\Win32\Debug\game.exe
+  ..\moai\3rdparty\glut-3.7.6-bin\glut32.dll
+  1 archivo(s) copiado(s)
