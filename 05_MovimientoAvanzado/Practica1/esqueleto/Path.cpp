@@ -2,41 +2,20 @@
 #include <tinyxml.h>
 #include "Path.h"
 
-void Path::LoadXML(const char* _fileName)
+
+void Path::AddPoint(const USVec2D& _point)
 {
-    TiXmlDocument xmlDocument(_fileName);
-    if (!xmlDocument.LoadFile())
-    {
-        printf("Error reading xml params.\n");
-        return;
-    }
+    path.push_back(_point);
+}
 
-    TiXmlHandle xmlHandleDocument(&xmlDocument);
+void Path::Clear()
+{
+    path.clear();
+}
 
-    TiXmlElement* xmlElement;
-    xmlElement = xmlHandleDocument.FirstChildElement().Element();
-
-    if (!xmlElement)
-    {
-        printf("xmlElement error.\n");
-        return;
-    }
-
-    TiXmlHandle xmlHandleRoot(xmlElement);
-    TiXmlHandle xmlHandleParams = xmlHandleRoot.FirstChildElement("points");
-
-    TiXmlElement* xmlElementParam = xmlHandleParams.FirstChild().Element();
-    for (xmlElementParam; xmlElementParam; xmlElementParam = xmlElementParam->NextSiblingElement())
-    {
-        const char* pName = xmlElementParam->Value();
-        if (strcmp(pName, "point") == 0)
-        {
-            USVec2D aux;
-            xmlElementParam->Attribute("x", &aux.mX);
-            xmlElementParam->Attribute("y", &aux.mY);
-            path.push_back(aux);
-        }
-    }
+bool Path::GetEmptyPath() const
+{
+    return path.empty();
 }
 
 Path::Point Path::GetNearestPoint(const USVec2D& _point) const
@@ -106,15 +85,19 @@ USVec2D Path::GetNextPoint(const Point& _point, float _dist) const
     return nextPoint;
 }
 
-void Path::DrawDebug()
+void Path::DrawDebug() const
 {
-    for (size_t i = 0; i < path.size(); ++i)
+    if (!path.empty())
     {
-        USVec2D current = path.at(i);
-        MOAIDraw::DrawEllipseFill(current.mX, current.mY, 2.f, 2.f, 10);
-        if (i < path.size() - 1)
+        MOAIGfxDevice& device = MOAIGfxDevice::Get();
+        device.SetPenColor(1.f, 0.f, 0.f, 1.f);
+        device.SetPenWidth(3.f);
+
+        for (int32_t i = 0; i < path.size() - 1; ++i)
         {
-            MOAIDraw::DrawLine(current, path.at(i + 1));
+            MOAIDraw::DrawLine(path.at(i), path.at(i + 1));
         }
+
+        device.SetPenWidth(1.f);
     }
 }
