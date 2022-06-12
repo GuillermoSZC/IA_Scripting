@@ -1,0 +1,7 @@
+﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+cl : command line warning D9035: option 'Zc:forScope-' has been deprecated and will be removed in a future release
+  Navmesh.cpp
+C:\Users\Soker\Desktop\GuillermoSuarez_08_Pathfinding_Navmesh\Practica2\game\pathfinding\Navmesh.cpp(37,52): warning C4018: '<': signed/unsigned mismatch
+  game.vcxproj -> C:\Users\Soker\Desktop\GuillermoSuarez_08_Pathfinding_Navmesh\Practica2\game\bin\Win32\Debug\game.exe
+  ..\moai\3rdparty\glut-3.7.6-bin\glut32.dll
+  1 archivo(s) copiado(s)
