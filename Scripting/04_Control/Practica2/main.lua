@@ -12,16 +12,16 @@ function onUpdate(seconds)
     
     -- Empieza tu código para mover a la criatura
     if onClickLeft(down) == 0 then
-        creaturePositionX = creaturePositionX + 0.4
+        creaturePositionX = creaturePositionX + 10 * seconds
         print("right")        
     elseif onClickLeft(down) == 1 then 
-        creaturePositionX = creaturePositionX - 0.4
+        creaturePositionX = creaturePositionX - 10 * seconds
         print("left")
     elseif onClickLeft(down) == 2 then 
-        creaturePositionY = creaturePositionY - 0.4 
+        creaturePositionY = creaturePositionY - 10 * seconds
         print("up")
     elseif onClickLeft(down) == 3 then 
-        creaturePositionY = creaturePositionY + 0.4
+        creaturePositionY = creaturePositionY + 10 * seconds
         print("down")
     end
     -- Termina tu código

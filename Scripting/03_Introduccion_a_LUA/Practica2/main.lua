@@ -8,7 +8,7 @@ function onUpdate(seconds)
     creaturePositionX, creaturePositionY = getPropPosition(creature)
     -- Empieza tu código
     print("Position X:", creaturePositionX)    
-    creaturePositionX = creaturePositionX - 0.4
+    creaturePositionX = creaturePositionX - 10 * seconds
     
     -- Termina tu código
     setPropPosition(creature, creaturePositionX, creaturePositionY)

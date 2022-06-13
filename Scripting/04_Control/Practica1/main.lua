@@ -12,9 +12,9 @@ function onUpdate(seconds)
     
     -- Empieza tu código para mover a la criatura
     if onClickLeft(down) == true then
-        creaturePositionX = creaturePositionX + 0.4
+        creaturePositionX = creaturePositionX + 10 * seconds
     else
-        creaturePositionX = creaturePositionX - 0.4
+        creaturePositionX = creaturePositionX - 10 * seconds
     end
     -- Termina tu código
 
