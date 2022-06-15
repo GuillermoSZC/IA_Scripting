@@ -6,30 +6,34 @@ mousePositionX = nil
 mousePositionY = nil
 
 -- Define tus variables globales
-criaturas = {
-    grifo = { texture = "creatures/gryphon.png", size = {x = 92, y = 92}},
-    mago = { texture = "creatures/mage.png", size = {x = 64, y = 64}},
-    grunt = { texture = "creatures/grunt.png", size = {x = 72, y = 72}},
-    peon = { texture = "creatures/peon.png", size = {x = 32, y = 32}},
-    dragon = { texture = "creatures/dragon.png", size = {x = 128, y = 128}},
+creatures = {}
+creatures["Grifo"] = { image = "creatures/gryphon.png", dimX = 128, dimY = 128}
+creatures["Mago"] = { image = "creatures/mage.png", dimX = 64, dimY = 64}
+creatures["Grunt"] = { image = "creatures/grunt.png", dimX = 64, dimY = 64}
+creatures["Peon"] = { image = "creatures/peon.png", dimX = 64, dimY = 64}
+creatures["Dragon"] = { image = "creatures/dragon.png", dimX = 64, dimY = 64}
 }
 
 mapa = {
     {
-        name = "grifo",
+        name = "Grifo",
         position = { x = 200, y = 100},
     },
     {
-        name = "mago",
+        name = "Mago",
         position = { x = 100, y = 200},
     },
     {
-        name = "peon",
+        name = "Peon",
         position = { x = 400, y = 100},
     },
     {
-        name = "dragon",
+        name = "Dragon",
         position = { x = 400, y = 400},
+    },
+    {
+        name = "Grunt",
+        position = { x = 900, y = 650 },
     },
 }
     

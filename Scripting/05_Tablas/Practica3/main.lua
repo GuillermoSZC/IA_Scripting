@@ -5,12 +5,44 @@ prepareWindow()
 mousePositionX = nil
 mousePositionY = nil
 
--- Define tus variables globales    
+-- Define tus variables globales
+creatures = {}
+creatures["Grifo"] = { image = "creatures/gryphon.png", dimX = 128, dimY = 128}
+creatures["Mago"] = { image = "creatures/mage.png", dimX = 64, dimY = 64}
+creatures["Grunt"] = { image = "creatures/grunt.png", dimX = 64, dimY = 64}
+creatures["Peon"] = { image = "creatures/peon.png", dimX = 64, dimY = 64}
+creatures["Dragon"] = { image = "creatures/dragon.png", dimX = 64, dimY = 64}
 -- Fin de tus variables globales
 
 -- Define tus funciones y llamadas
-
+function drawCreature(layer, creature_name, positionX, positionY)
+    posX = positionX or 0
+    posY = positionY or 0
+    gfxQuad = MOAIGfxQuad2D.new()
+    
+    texture_name = creatures[creature_name].image
+  
+    gfxQuad:setTexture(texture_name)
+    gfxQuad:setRect(0, 0, creatures[creature_name].dimX, creatures[creature_name].dimY)
+    gfxQuad:setUVRect(0, 0, 1, 1)
+  
+    prop = MOAIProp2D.new()
+    prop:setDeck(gfxQuad)
+    prop:setLoc(posX, posY)
+    layer:insertProp(prop)
+    
+    return prop
+end
 -- Fin de tus funciones
+
+-- No entiendo muy bien la diferencia de la practica anterior a esta,
+-- por lo que he entendido es prácticamente lo mismo pero pintando varias criaturas en vez de una
+addCreature("Mago", 450, 330)
+addCreature("Peon", 50, 600)
+addCreature("Grifo", 450, 30)
+addCreature("Grunt", 150, 330)
+addCreature("Dragon", 900, 610)
+
 
 function onUpdate(seconds)
 end

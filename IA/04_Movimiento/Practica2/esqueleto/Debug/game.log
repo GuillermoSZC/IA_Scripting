@@ -1,5 +1,3 @@
 ﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  ArriveSteering.cpp
-  game.vcxproj -> C:\Users\Soker\Desktop\GuillermoSuarez_04_Movimiento\Practica2\esqueleto\bin\Win32\Debug\game.exe
-  ..\moai\3rdparty\glut-3.7.6-bin\glut32.dll
-  1 archivo(s) copiado(s)
+  stdafx.cpp
+C:\Users\guillermo.suarez\Documents\GitHub\IA_Scripting\IA\04_Movimiento\Practica2\esqueleto\stdafx.cpp : fatal error C1083: Cannot open include file: 'zlcore/zl_replace.h': No such file or directory
