@@ -7,23 +7,25 @@ mousePositionY = nil
 
 
 -- Define tus variables globales
+creaturesArray = {}
 life = {}
-index = 0
-creature = {}
+xPosition = {}
+yPosition = {}
 -- Termina tu definicion de variables
 
 function onUpdate(seconds)
-
 end
 
 function onClickLeft(down)
-    index = index + 1
     print("Clicked Left")
     creatureSizeX, creatureSizeY = getCreatureSize("griphon")
     if not down then
         -- Escribe tu código para el botón izquierdo
-        creature[index] = addCreature("griphon", mousePositionX - creatureSizeX * 0.5, mousePositionY - creatureSizeY * 0.5)
-        life[index] = 25
+        creature = addCreature("griphon", mousePositionX - creatureSizeX * 0.5, mousePositionY - creatureSizeY * 0.5)
+        table.insert(creaturesArray, 0, creature)
+        table.insert(life, 0, 25) 
+        table.insert(xPosition, 0, mousePositionX - creatureSizeX * 0.5)
+        table.insert(yPosition, 0, mousePositionY - creatureSizeY * 0.5)        
         -- Termina tu código
     end
 end
@@ -32,23 +34,28 @@ function onClickRight(down)
     print("Clicked Right")
     creatureSizeX, creatureSizeY = getCreatureSize("griphon")
     
+    
     if not down then
-        if index > 0 then
-            -- Escribe tu código para el botón derecho
-            if creature ~= nil then
-                posX, posY = getPropPosition(creature[index])
-                posX = posX + creatureSizeX * 0.5
-                posY = posY + creatureSizeY * 0.5
+    -- Escribe tu código para el botón derecho
+        for i = 0, #creaturesArray, 1 do
+        
+            if mousePositionX > xPosition[i] and mousePositionX < xPosition[i] + creatureSizeX
+            and mousePositionY > yPosition[i] and mousePositionY < yPosition[i] + creatureSizeY then                
                 
-                if mousePositionX == posX and mousePositionY == posY then
-                    life[index] = life[index] - 5                    
-                    if life[index] == 0 then
-                        removeCreature(creature[index])
-                        index = index - 1
-                    end
-                end  
-            end         
-        end    
+                life[i] = life[i] - 5
+                print(life[i])
+                
+                if life[i] <= 0 then
+                    removeCreature(creaturesArray[i])
+                    table.remove(yPosition, i)   
+                    table.remove(xPosition, i)
+                    table.remove(life, i)
+                    table.remove(creaturesArray, i)
+                    break      
+                end
+            end
+        end
+    -- Termina tu código
     end
 end
 
