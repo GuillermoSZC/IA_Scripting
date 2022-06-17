@@ -19,14 +19,12 @@ private:
     std::vector<USVec2D> path;
 
 public:
-    void AddPoint(const USVec2D& _point);
-    void Clear();
-    bool GetEmptyPath() const;
+    void LoadXML(const char* _fileName);
 
     Point GetNearestPoint(const USVec2D& _point) const;
     USVec2D GetNextPoint(const Point& _point, float _dist) const;
 
-    void DrawDebug() const;
+    void DrawDebug();
     
 protected:
 
