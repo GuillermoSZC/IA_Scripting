@@ -1,0 +1,1 @@
+C:\Users\Soker\Documents\GitHub\IA_Scripting\Scripting\08_LUA_Desde_C++\scripting\pacman\pacman\Debug\pacman.exe
